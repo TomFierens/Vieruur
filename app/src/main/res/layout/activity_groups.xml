@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16sp"
+        android:paddingRight="16sp"
+        android:orientation="vertical" >
+        <Button
+            android:id="@+id/button_sloebers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50sp"
+            android:layout_marginTop="100sp"
+            android:layout_gravity="center_horizontal"
+            android:text="sloebers" />
+        <Button
+            android:id="@+id/button_speelclub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50sp"
+            android:layout_marginTop="50sp"
+            android:layout_gravity="center_horizontal"
+            android:text="speelclub" />
+        <Button
+            android:id="@+id/button_rakkers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50sp"
+            android:layout_marginTop="50sp"
+            android:layout_gravity="center_horizontal"
+            android:text="rakkers" />
+        <Button
+            android:id="@+id/button_toppers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50sp"
+            android:layout_marginTop="50sp"
+            android:layout_gravity="center_horizontal"
+            android:text="toppers" />
+        <Button
+            android:id="@+id/button_kerels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50sp"
+            android:layout_marginTop="50sp"
+            android:layout_gravity="center_horizontal"
+            android:text="kerels" />
+        <Button
+            android:id="@+id/button_aspis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50sp"
+            android:layout_marginTop="50sp"
+            android:layout_gravity="center_horizontal"
+            android:text="aspi's" />
+
+    </LinearLayout>
+</ScrollView>
