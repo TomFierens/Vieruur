@@ -15,20 +15,20 @@
         android:singleLine="true"
         android:textSize="26sp"
         android:textColor="@color/colorPrimaryDark"
-        android:text="Member name"
-        android:id="@+id/tv_memberName"/>
+        android:text="Leader name"
+        android:id="@+id/tv_leaderName"/>
 
     <TextView
-        android:layout_alignParentRight="true"
-        android:id="@+id/tv_circle"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
-        android:layout_gravity="center_vertical|end"
-        android:background="@drawable/circle"
-        android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:text="NUMBER"
-        android:textColor="@android:color/white"
-        android:textSize="16sp" />
+        android:layout_alignParentLeft="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical|start"
+        android:gravity="right"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="26sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Outstanding amount"
+        android:id="@+id/tv_amount"/>
 </RelativeLayout>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Vieruur</string>
+    <string name="member_name_hint">Member name</string>
+    <string name="group_hint">Member name</string>
+    <string name="consumptions_hint">Consumptions (max 99)</string>
+    <string name="add_button_text">ADD</string>
 </resources>
