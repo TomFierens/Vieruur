@@ -21,15 +21,15 @@
             android:inputType="textPersonName|textCapWords"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
-        <EditText
-            android:id="@+id/group_edit_text"
-            android:layout_width="20dp"
+
+        <Spinner
+            android:id="@+id/group_spinner"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
 
             android:hint="@string/group_hint"
-            android:inputType="textPersonName|textCapWords"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+             />
 
         <EditText
             android:id="@+id/consumptions_edit_text"
@@ -61,5 +61,7 @@
         >
 
     </android.support.v7.widget.RecyclerView>
+    
+
 
 </LinearLayout>

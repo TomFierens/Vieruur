@@ -1,7 +1,10 @@
 package com.example.tomfierens.vieruur;
 
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 
 public class AdjustActivity extends AppCompatActivity {
@@ -10,9 +13,18 @@ public class AdjustActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adjust);
-        addMember = (Button) findViewById(R.id.button_addMembers);
-        addLeader = (Button) findViewById(R.id.button_addLeader);
-        removeMember = (Button) findViewById(R.id.button_removeMember);
-        removeLeader = (Button) findViewById(R.id.button_removeLeader);
+        ActionBar actionBar = this.getSupportActionBar();
+
+        if(actionBar != null){
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == android.R.id.home){
+            NavUtils.navigateUpFromSameTask(this);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

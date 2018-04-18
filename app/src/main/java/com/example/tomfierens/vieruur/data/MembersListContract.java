@@ -11,6 +11,6 @@ public class MembersListContract {
        public static final String TABLE_NAME = "membersList";
        public static final String COLUMN_MEMBER_NAME = "memberName";
        public static final String COLUMN_CONSUMPTIONS = "consumptions";
-       public static final String COLUMN_GROUP = "group";
+       public static final String COLUMN_GROUP = "memberGroup";
     }
 }

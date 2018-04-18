@@ -46,7 +46,7 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
         // Update the view holder with the information needed to display
         String memberName = null;
         memberName = mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_MEMBER_NAME));
-        String group = mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_GROUP));
+        String memberGroup = mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_GROUP));
         int memberConsumptions = mCursor.getInt(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_CONSUMPTIONS));
         holder.nameTextView.setText(memberName);
         holder.consumptionsTextView.setText(String.valueOf(memberConsumptions));
