@@ -32,7 +32,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="leden" />
+            android:text="@string/memberButtonMain" />
         <Button
             android:id="@+id/button_leaders"
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="leiding" />
+            android:text="@string/leaderButtonMain" />
         <Button
             android:id="@+id/button_search"
             android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="zoeken" />
+            android:text="@string/searchButtonMain" />
 
     </LinearLayout>
 </ScrollView>

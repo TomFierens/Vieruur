@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -61,7 +60,6 @@ public class MembersActivity extends AppCompatActivity {
 
         mNewMemberNameEditText = (EditText) findViewById(R.id.member_name_edit_text);
         mNewStartConsumptionsEditText = (EditText) findViewById(R.id.consumptions_edit_text);
-        //mNewGroupEditText = (EditText) findViewById(R.id.group_edit_text);
 
         mMembersList.setLayoutManager(new LinearLayoutManager(this));
 
@@ -143,7 +141,6 @@ public class MembersActivity extends AppCompatActivity {
         mNewMemberNameEditText.getText().clear();
         mNewStartConsumptionsEditText.getText().clear();
 
-        //mNewGroupEditText.getText().clear();
     }
     private long addNewMember(String name, int consumptions, String memberGroup){
         ContentValues cv = new ContentValues();

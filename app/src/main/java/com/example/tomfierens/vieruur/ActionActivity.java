@@ -5,19 +5,19 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
-import android.os.AsyncTask;
+
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.example.tomfierens.vieruur.data.MembersListContract;
 import com.example.tomfierens.vieruur.data.MembersListDbHelper;
 
-import java.net.URL;
+
 
 public class ActionActivity extends AppCompatActivity {
     private TextView memberName;

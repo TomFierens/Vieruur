@@ -30,18 +30,16 @@ public class LeadersListAdapter extends RecyclerView.Adapter<LeadersListAdapter.
     }
     @Override
     public LeadersListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Get the RecyclerView item layout
+
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.leaders_list_item, parent, false);
         return new LeadersListViewHolder(view);
     }
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void onBindViewHolder(LeadersListViewHolder holder, int position) {
-        // Move the mCursor to the position of the item to be displayed
         if (!mCursor.moveToPosition(position))
-            return; // bail if returned null
+            return;
 
-        // Update the view holder with the information needed to display
         String leaderName = null;
         leaderName = mCursor.getString(mCursor.getColumnIndex("leaderName"));
         String outstandingAmount = null;
@@ -70,11 +68,9 @@ public class LeadersListAdapter extends RecyclerView.Adapter<LeadersListAdapter.
     }
 
     public void swapCursor(Cursor newCursor) {
-        // Always close the previous mCursor first
         if (mCursor != null) mCursor.close();
         mCursor = newCursor;
         if (newCursor != null) {
-            // Force the RecyclerView to refresh
             this.notifyDataSetChanged();
         }
     }
@@ -83,7 +79,6 @@ public class LeadersListAdapter extends RecyclerView.Adapter<LeadersListAdapter.
 
         private Toast mToast;
 
-        // Will display the gamesList name
         TextView nameTextView;
         TextView amountTextView;
 

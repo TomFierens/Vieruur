@@ -18,7 +18,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="sloebers" />
+            android:text="@string/group1" />
         <Button
             android:id="@+id/button_speelclub"
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="speelclub" />
+            android:text="@string/group2" />
         <Button
             android:id="@+id/button_rakkers"
             android:layout_width="match_parent"
@@ -38,7 +38,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="rakkers" />
+            android:text="@string/group3" />
         <Button
             android:id="@+id/button_toppers"
             android:layout_width="match_parent"
@@ -48,7 +48,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="toppers" />
+            android:text="@string/group4" />
         <Button
             android:id="@+id/button_kerels"
             android:layout_width="match_parent"
@@ -58,7 +58,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="kerels" />
+            android:text="@string/group5" />
         <Button
             android:id="@+id/button_aspis"
             android:layout_width="match_parent"
@@ -68,7 +68,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="aspi's" />
+            android:text="@string/group6" />
 
     </LinearLayout>
 </ScrollView>

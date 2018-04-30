@@ -13,31 +13,17 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-/**
- * These utilities will be used to communicate with the network.
- */
+
 public class NetworkUtils {
 
     final static String GITHUB_BASE_URL =
-          //  "https://api.github.com/search/repositories";
 
-            "http://www.mocky.io/v2/5addcfdc300000262b4b28a1";
 
-    final static String PARAM_QUERY = "q";
+            "http://www.mocky.io/v2/5ae737fb2f00008600f059fe";
 
-    /*
-     * The sort field. One of stars, forks, or updated.
-     * Default: results are sorted by best match if no field is specified.
-     */
-    final static String PARAM_SORT = "sort";
-    final static String sortBy = "stars";
 
-    /**
-     * Builds the URL used to query Mocky.
-     *
-     *
-     *
-     */
+
+
     public static URL buildUrl() {
         Uri builtUri = Uri.parse(GITHUB_BASE_URL);
 

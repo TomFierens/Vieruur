@@ -27,4 +27,13 @@
     <string name="error_message">Geen resultaten gevonden, probeer opnieuw.</string>
     <string name="newCard_button_text6">Voeg nieuwe kaart toe (€6)</string>
     <string name="newCard_button_text12">Voeg nieuwe kaart toe (€12)</string>
+    <string name="group1">sloebers</string>
+    <string name="group2">speelclub</string>
+    <string name="group3">rakkers</string>
+    <string name="group4">toppers</string>
+    <string name="group5">kerels</string>
+    <string name="group6">aspi\'s</string>
+    <string name="leaderButtonMain">leiding</string>
+    <string name="searchButtonMain">zoeken</string>
+    <string name="memberButtonMain">leden</string>
 </resources>

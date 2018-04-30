@@ -33,7 +33,6 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
     }
     @Override
     public MembersListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Get the RecyclerView item layout
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.members_list_item, parent, false);
         return new MembersListViewHolder(view);
@@ -41,11 +40,9 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBindViewHolder(MembersListViewHolder holder, int position) {
-        // Move the mCursor to the position of the item to be displayed
         if (!mCursor.moveToPosition(position))
-            return; // bail if returned null
+            return;
 
-        // Update the view holder with the information needed to display
         String memberName = null;
         memberName = mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_MEMBER_NAME));
         memberGroup = mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_GROUP));
@@ -78,11 +75,9 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
     }
 
     public void swapCursor(Cursor newCursor) {
-        // Always close the previous mCursor first
         if (mCursor != null) mCursor.close();
         mCursor = newCursor;
         if (newCursor != null) {
-            // Force the RecyclerView to refresh
             this.notifyDataSetChanged();
         }
     }
@@ -91,7 +86,6 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
 
         private Toast mToast;
 
-        // Will display the gamesList name
         TextView nameTextView;
         TextView consumptionsTextView;
 
