@@ -1,26 +1,28 @@
 package com.example.tomfierens.vieruur;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.Nullable;
+
+import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
+
 
 import com.example.tomfierens.vieruur.data.MembersListContract;
 import com.example.tomfierens.vieruur.data.MembersListDbHelper;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 
 public class MembersActivity extends AppCompatActivity {
 
@@ -32,13 +34,13 @@ public class MembersActivity extends AppCompatActivity {
     private EditText mNewStartConsumptionsEditText;
     private Spinner groupSpinner;
     private ArrayAdapter<CharSequence> groupAdapter;
-
+    private String filter;
     private final static String LOG_TAG = MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_members);
-
+        filter = getIntent().getStringExtra("Group");
         groupSpinner = (Spinner)findViewById(R.id.group_spinner);
         groupAdapter = ArrayAdapter.createFromResource(this, R.array.memberGroups,android.R.layout.simple_spinner_item);
         groupAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -73,20 +75,55 @@ public class MembersActivity extends AppCompatActivity {
 
         mMembersList.setAdapter(mAdapter);
 
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                final long id = (long) viewHolder.itemView.getTag();
+                final AlertDialog.Builder builder = new AlertDialog.Builder(MembersActivity.this);
+                builder.setMessage("Wil je " + MembersListContract.MembersListEntry.COLUMN_MEMBER_NAME + " verwijderen?");
+                builder.setCancelable(false);
+                builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        mCursor = getAllMembers();
+                        mAdapter.swapCursor(mCursor);
+                    }
+                });
+                builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        removeMember(id);
+                        dialog.cancel();
+                        mCursor = getAllMembers();
+                        mAdapter.swapCursor(getAllMembers());
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        }).attachToRecyclerView(mMembersList);
+
     }
 
     private Cursor getAllMembers(){
        return mDb.query(
                MembersListContract.MembersListEntry.TABLE_NAME,
                null,
-               null,
-               null,
+               "memberGroup = ?",
+               new String[]{filter},
                null,
                null,
                MembersListContract.MembersListEntry.COLUMN_CONSUMPTIONS
 
        );
     }
+
     public void addToMembersList(View view){
         if(mNewMemberNameEditText.getText().length() == 0 || mNewStartConsumptionsEditText.getText().length() == 0 || groupSpinner.getSelectedItem().toString().length() == 0){
             return;
@@ -114,5 +151,25 @@ public class MembersActivity extends AppCompatActivity {
         cv.put(MembersListContract.MembersListEntry.COLUMN_CONSUMPTIONS, consumptions);
         cv.put(MembersListContract.MembersListEntry.COLUMN_GROUP, memberGroup);
         return mDb.insert(MembersListContract.MembersListEntry.TABLE_NAME, null,cv);
+
+    }
+    private boolean removeMember(long id){
+        return mDb.delete(MembersListContract.MembersListEntry.TABLE_NAME, MembersListContract.MembersListEntry._ID + "=" + id, null) > 0;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mMembersList.setLayoutManager(new LinearLayoutManager(this));
+
+        MembersListDbHelper dbHelper = new MembersListDbHelper(this);
+
+        mDb = dbHelper.getWritableDatabase();
+
+        mCursor = getAllMembers();
+
+        mAdapter = new MembersListAdapter(this, mCursor);
+
+        mMembersList.setAdapter(mAdapter);
     }
 }

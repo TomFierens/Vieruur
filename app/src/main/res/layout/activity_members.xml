@@ -18,6 +18,7 @@
             android:layout_weight="1"
 
             android:hint="@string/member_name_hint"
+            android:textColorHint="@color/colorPrimary"
             android:inputType="textPersonName|textCapWords"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 

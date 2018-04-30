@@ -22,6 +22,47 @@ public class GroupsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GroupsActivity.this, MembersActivity.class);
+                intent.putExtra("Group", "Sloebers");
+                startActivity(intent);
+            }
+        });
+        speelclubButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GroupsActivity.this, MembersActivity.class);
+                intent.putExtra("Group", "Speelclub");
+                startActivity(intent);
+            }
+        });
+        rakkersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GroupsActivity.this, MembersActivity.class);
+                intent.putExtra("Group", "Rakkers");
+                startActivity(intent);
+            }
+        });
+        toppersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GroupsActivity.this, MembersActivity.class);
+                intent.putExtra("Group", "Toppers");
+                startActivity(intent);
+            }
+        });
+        kerelsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GroupsActivity.this, MembersActivity.class);
+                intent.putExtra("Group", "Kerels");
+                startActivity(intent);
+            }
+        });
+        aspisButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GroupsActivity.this, MembersActivity.class);
+                intent.putExtra("Group", "Aspies");
                 startActivity(intent);
             }
         });

@@ -11,12 +11,14 @@ import android.widget.TextView;
 
 import com.example.tomfierens.vieruur.Utilities.NetworkUtils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.net.URL;
 
 public class SearchActivity extends AppCompatActivity {
-    EditText mSearchBoxEditText;
-    TextView mUrlDispayTextView;
+
     TextView mSearchResults;
     Button mSearchQueryButton;
     TextView mErrorMessageDisplay;
@@ -25,8 +27,7 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        mSearchBoxEditText = (EditText) findViewById(R.id.search_box);
-        mUrlDispayTextView = (TextView) findViewById(R.id.tv_url_display);
+
         mSearchResults = (TextView) findViewById(R.id.search_results);
         mSearchQueryButton = (Button) findViewById(R.id.search_query_button);
         mErrorMessageDisplay = (TextView) findViewById(R.id.tv_error_message_display);
@@ -36,9 +37,9 @@ public class SearchActivity extends AppCompatActivity {
 
 
     public void makeGithubSearchQuery(View view) {
-        String githubQuery = mSearchBoxEditText.getText().toString();
-        URL githubSearchUrl = NetworkUtils.buildUrl(githubQuery);
-        mUrlDispayTextView.setText(githubSearchUrl.toString());
+
+        URL githubSearchUrl = NetworkUtils.buildUrl();
+
         String githubSearchResults = null;
         new GithubQueryTask().execute(githubSearchUrl);
     }
@@ -66,6 +67,7 @@ public class SearchActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             return githubSearchResults;
         }
         @Override

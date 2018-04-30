@@ -19,7 +19,9 @@ import java.util.Scanner;
 public class NetworkUtils {
 
     final static String GITHUB_BASE_URL =
-            "https://api.github.com/search/repositories";
+          //  "https://api.github.com/search/repositories";
+
+            "http://www.mocky.io/v2/5addcfdc300000262b4b28a1";
 
     final static String PARAM_QUERY = "q";
 
@@ -31,16 +33,13 @@ public class NetworkUtils {
     final static String sortBy = "stars";
 
     /**
-     * Builds the URL used to query Github.
+     * Builds the URL used to query Mocky.
      *
-     * @param githubSearchQuery The keyword that will be queried for.
-     * @return The URL to use to query the weather server.
+     *
+     *
      */
-    public static URL buildUrl(String githubSearchQuery) {
-        Uri builtUri = Uri.parse(GITHUB_BASE_URL).buildUpon()
-                .appendQueryParameter(PARAM_QUERY, githubSearchQuery)
-                .appendQueryParameter(PARAM_SORT, sortBy)
-                .build();
+    public static URL buildUrl() {
+        Uri builtUri = Uri.parse(GITHUB_BASE_URL);
 
         URL url = null;
         try {

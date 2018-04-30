@@ -31,7 +31,8 @@
         <activity android:name=".GroupsActivity" />
         <activity android:name=".MembersActivity" />
         <activity android:name=".LeadersActivity" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".ActionActivity"></activity>
     </application>
 
 </manifest>

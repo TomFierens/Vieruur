@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="16sp"
         android:paddingRight="16sp"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/username_text"
+            android:id="@+id/memberName_text"
             android:layout_marginTop="100sp"
             android:layout_marginBottom="50sp"
             android:textSize="40sp"
@@ -22,37 +24,41 @@
             android:text="Chiro Kiewit"
             android:visibility="visible"
             />
-
+        <TextView
+            android:layout_alignParentRight="true"
+            android:id="@+id/circle_consumptions"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="NUMBER"
+            android:textColor="@android:color/white"
+            android:onClick="pushConsumption"
+            android:textSize="50sp" />
         <Button
-            android:id="@+id/button_members"
+            android:id="@+id/button_newCard6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50sp"
-            android:layout_marginTop="50sp"
+            android:layout_marginBottom="25sp"
+            android:layout_marginTop="25sp"
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="leden" />
+            android:onClick="add6"
+            android:text="@string/newCard_button_text6" />
         <Button
-            android:id="@+id/button_leaders"
+            android:id="@+id/button_newCard12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50sp"
-            android:layout_marginTop="50sp"
+            android:layout_marginBottom="25sp"
+            android:layout_marginTop="25sp"
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="leiding" />
-        <Button
-            android:id="@+id/button_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50sp"
-            android:layout_marginTop="50sp"
-            android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="zoeken" />
-
+            android:onClick="add12"
+            android:text="@string/newCard_button_text12" />
     </LinearLayout>
 </ScrollView>

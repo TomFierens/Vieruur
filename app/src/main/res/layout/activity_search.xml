@@ -7,19 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/search_box"
-        android:hint="@string/search_hint"
-        android:textSize="22sp"/>
-    <TextView
-        android:id="@+id/tv_url_display"
-        android:textSize="22sp"
-        android:layout_marginTop="8dp"
-        android:text="@string/show_URL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/search_query_button"
         android:layout_width="match_parent"

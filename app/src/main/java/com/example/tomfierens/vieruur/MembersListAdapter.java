@@ -2,6 +2,7 @@ package com.example.tomfierens.vieruur;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Build;
@@ -24,6 +25,7 @@ import static java.lang.Integer.valueOf;
 public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.MembersListViewHolder>{
     private Cursor mCursor;
     private Context mContext;
+    private String memberGroup;
 
     public MembersListAdapter(Context context, Cursor cursor){
         this.mContext=context;
@@ -46,11 +48,14 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
         // Update the view holder with the information needed to display
         String memberName = null;
         memberName = mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_MEMBER_NAME));
-        String memberGroup = mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_GROUP));
+        memberGroup = mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_GROUP));
         int memberConsumptions = mCursor.getInt(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_CONSUMPTIONS));
+
+        long id = mCursor.getLong(mCursor.getColumnIndex(MembersListContract.MembersListEntry._ID));
+
         holder.nameTextView.setText(memberName);
         holder.consumptionsTextView.setText(String.valueOf(memberConsumptions));
-
+        holder.itemView.setTag(id);
 
         if(memberConsumptions <= 6 && memberConsumptions > 0){
             holder.consumptionsTextView.getBackground().setTint(Color.rgb(234,114,9));
@@ -61,6 +66,7 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
         else{
             holder.consumptionsTextView.getBackground().setTint(Color.rgb(106,163,27));
         }
+
     }
 
     @Override
@@ -102,14 +108,10 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
         @Override
         public void onClick(View view) {
 
-
-            if(mToast != null){
-                mToast.cancel();
-            }
-
-            String toastMessage = nameTextView.getText() + " clicked.";
-            mToast = Toast.makeText(mContext, toastMessage, Toast.LENGTH_LONG);
-            mToast.show();
+            Intent intent = new Intent(mContext, ActionActivity.class);
+            intent.putExtra("MemberName", nameTextView.getText());
+            intent.putExtra("GroupName", memberGroup);
+            mContext.startActivity(intent);
         }
 
     }
