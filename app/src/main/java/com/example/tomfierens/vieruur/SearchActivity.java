@@ -22,7 +22,7 @@ import java.net.URL;
 public class SearchActivity extends AppCompatActivity {
 
 
-    Button mSearchQueryButton;
+
     TextView mErrorMessageDisplay;
     ProgressBar mLoadingIndicator;
     private SearchListAdapter mAdapter;
@@ -34,7 +34,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
 
-        mSearchQueryButton = (Button) findViewById(R.id.search_query_button);
+
         mErrorMessageDisplay = (TextView) findViewById(R.id.tv_error_message_display);
         mLoadingIndicator = (ProgressBar) findViewById(R.id.pb_loading_indicator);
 
@@ -46,6 +46,8 @@ public class SearchActivity extends AppCompatActivity {
         mSearchList.setLayoutManager(new LinearLayoutManager(this));
 
         mSearchList.setAdapter(mAdapter);
+
+        makeSearchQuery();
     }
 
     private Cursor getJSONCursor(String response){
@@ -61,11 +63,11 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
-    public void makeGithubSearchQuery(View view) {
+    public void makeSearchQuery() {
 
-        URL githubSearchUrl = NetworkUtils.buildUrl();
+        URL SearchUrl = NetworkUtils.buildUrl();
 
-        new GithubQueryTask().execute(githubSearchUrl);
+        new QueryTask().execute(SearchUrl);
     }
     private void showJsonDataView(){
         mErrorMessageDisplay.setVisibility(View.INVISIBLE);
@@ -75,7 +77,7 @@ public class SearchActivity extends AppCompatActivity {
         mSearchList.setVisibility(View.INVISIBLE);
         mErrorMessageDisplay.setVisibility(View.VISIBLE);
     }
-    public class GithubQueryTask extends AsyncTask<URL, Void, String>{
+    public class QueryTask extends AsyncTask<URL, Void, String>{
 
         @Override
         protected void onPreExecute() {
@@ -85,21 +87,21 @@ public class SearchActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(URL... params) {
             URL searchUrl = params[0];
-            String githubSearchResults = null;
+            String searchResults = null;
             try {
-                githubSearchResults = NetworkUtils.getResponseFromHttpUrl(searchUrl);
+                searchResults = NetworkUtils.getResponseFromHttpUrl(searchUrl);
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            return githubSearchResults;
+            return searchResults;
         }
         @Override
-        protected void onPostExecute(String githubSearchResults) {
+        protected void onPostExecute(String searchResults) {
             mLoadingIndicator.setVisibility(View.INVISIBLE);
-            if (githubSearchResults != null && !githubSearchResults.equals("")) {
+            if (searchResults != null && !searchResults.equals("")) {
                 showJsonDataView();
-                mCursor = getJSONCursor(githubSearchResults);
+                mCursor = getJSONCursor(searchResults);
                 mAdapter.swapCursor(mCursor);
 
 

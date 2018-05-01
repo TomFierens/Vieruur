@@ -52,7 +52,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/searchButtonMain" />
+            android:text="@string/search_button_text" />
 
     </LinearLayout>
 </ScrollView>

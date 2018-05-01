@@ -83,7 +83,7 @@ public class MembersActivity extends AppCompatActivity {
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 final long id = (long) viewHolder.itemView.getTag();
                 final AlertDialog.Builder builder = new AlertDialog.Builder(MembersActivity.this);
-                builder.setMessage("Wil je " + MembersListContract.MembersListEntry.COLUMN_MEMBER_NAME + " verwijderen?");
+                builder.setMessage("Wil je " + mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_MEMBER_NAME)) + " verwijderen?");
                 builder.setCancelable(false);
                 builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
                     @Override

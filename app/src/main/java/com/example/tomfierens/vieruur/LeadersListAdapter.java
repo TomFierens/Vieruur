@@ -100,7 +100,7 @@ public class LeadersListAdapter extends RecyclerView.Adapter<LeadersListAdapter.
                 mToast.cancel();
             }
 
-            String toastMessage = nameTextView.getText() + " clicked.";
+            String toastMessage = amountTextView.getText() + "";
             mToast = Toast.makeText(mContext, toastMessage, Toast.LENGTH_LONG);
             mToast.show();
         }
