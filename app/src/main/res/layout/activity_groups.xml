@@ -2,7 +2,8 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background_colors">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -11,64 +12,64 @@
         android:orientation="vertical" >
         <Button
             android:id="@+id/button_sloebers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:layout_marginBottom="50sp"
             android:layout_marginTop="100sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/group1" />
+            android:text="@string/group1"
+            style="@style/buttonStyle"/>
         <Button
             android:id="@+id/button_speelclub"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:layout_marginBottom="50sp"
             android:layout_marginTop="50sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/group2" />
+            android:text="@string/group2"
+            style="@style/buttonStyle"/>
         <Button
             android:id="@+id/button_rakkers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:layout_marginBottom="50sp"
             android:layout_marginTop="50sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/group3" />
+            android:text="@string/group3"
+            style="@style/buttonStyle"/>
         <Button
             android:id="@+id/button_toppers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:layout_marginBottom="50sp"
             android:layout_marginTop="50sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/group4" />
+            android:text="@string/group4"
+            style="@style/buttonStyle"/>
         <Button
             android:id="@+id/button_kerels"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:layout_marginBottom="50sp"
             android:layout_marginTop="50sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/group5" />
+            android:text="@string/group5"
+            style="@style/buttonStyle"/>
         <Button
             android:id="@+id/button_aspis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:layout_marginBottom="50sp"
             android:layout_marginTop="50sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/group6" />
+            android:text="@string/group6"
+            style="@style/buttonStyle"/>
 
     </LinearLayout>
 </ScrollView>

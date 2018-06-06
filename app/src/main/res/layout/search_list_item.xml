@@ -14,7 +14,7 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:textSize="26sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         android:text="Drink name"
         android:id="@+id/tv_searchName"/>
 
@@ -28,7 +28,7 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:textSize="26sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         android:text="Amount"
         android:id="@+id/tv_searchAmount"/>
 </RelativeLayout>

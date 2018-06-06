@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="@string/pref_show_username_key"
-        android:summaryOff="@string/pref_show_false"
-        android:summaryOn="@string/pref_show_true"
-        android:title="@string/pref_show_username_label"/>
-    <EditTextPreference
-        android:defaultValue="@string/pref_default_username"
-        android:key="@string/pref_default_username_key"
-        android:title="@string/pref_default_username_title"
-        >
-    </EditTextPreference>
-</PreferenceScreen>
+
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_show_username_key"
+            android:summaryOff="@string/pref_show_false"
+            android:summaryOn="@string/pref_show_true"
+            android:title="@string/pref_show_username_label"
+            />
+        <EditTextPreference
+            android:defaultValue="@string/pref_default_username"
+            android:key="@string/pref_default_username_key"
+            android:title="@string/pref_default_username_title"
+
+            >
+        </EditTextPreference>
+    </PreferenceScreen>

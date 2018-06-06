@@ -83,9 +83,10 @@ public class MembersActivity extends AppCompatActivity {
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 final long id = (long) viewHolder.itemView.getTag();
                 final AlertDialog.Builder builder = new AlertDialog.Builder(MembersActivity.this);
+
                 builder.setMessage("Wil je " + mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_MEMBER_NAME)) + " verwijderen?");
                 builder.setCancelable(false);
-                builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("nee", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
@@ -93,7 +94,7 @@ public class MembersActivity extends AppCompatActivity {
                         mAdapter.swapCursor(mCursor);
                     }
                 });
-                builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("ja", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         removeMember(id);

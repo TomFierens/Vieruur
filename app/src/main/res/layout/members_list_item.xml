@@ -14,7 +14,7 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:textSize="26sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         android:text="Member name"
         android:id="@+id/tv_memberName"/>
 

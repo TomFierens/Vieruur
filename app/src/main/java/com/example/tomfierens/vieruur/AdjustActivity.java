@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class AdjustActivity extends AppCompatActivity {
-    private Button addMember, addLeader, removeMember, removeLeader;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -2,8 +2,8 @@
 
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
+    android:layout_height="match_parent"
+    android:background="@drawable/background_colors"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -18,8 +18,8 @@
             android:id="@+id/memberName_text"
             android:layout_marginTop="100sp"
             android:layout_marginBottom="50sp"
-            android:textSize="40sp"
-            android:textColor="@color/colorPrimary"
+            android:textSize="50sp"
+            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
             android:text="Chiro Kiewit"
             android:visibility="visible"
@@ -40,25 +40,21 @@
             android:textSize="50sp" />
         <Button
             android:id="@+id/button_newCard6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="25sp"
             android:layout_marginTop="25sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
             android:onClick="add6"
-            android:text="@string/newCard_button_text6" />
+            android:text="@string/newCard_button_text6"
+            style="@style/buttonStyle"/>
         <Button
             android:id="@+id/button_newCard12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="25sp"
             android:layout_marginTop="25sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
             android:onClick="add12"
-            android:text="@string/newCard_button_text12" />
+            android:text="@string/newCard_button_text12"
+            style="@style/buttonStyle"/>
     </LinearLayout>
 </ScrollView>

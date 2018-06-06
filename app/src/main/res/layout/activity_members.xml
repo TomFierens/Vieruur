@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/activity_horizontal_margin"
+    android:background="@drawable/background_colors"
     tools:context="com.example.tomfierens.vieruur.MembersActivity">
 
     <LinearLayout
@@ -16,9 +17,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-
+            android:textColor="@color/white"
             android:hint="@string/member_name_hint"
-            android:textColorHint="@color/colorPrimary"
+            android:textColorHint="@color/white"
             android:inputType="textPersonName|textCapWords"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
@@ -28,6 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+
 
             android:hint="@string/group_hint"
              />
@@ -40,20 +42,19 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="2"
+            android:textColor="@color/white"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
     </LinearLayout>
 
 
     <Button
         android:id="@+id/add_to_membersList_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorPrimary"
         android:onClick="addToMembersList"
         android:text="@string/add_button_text"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
+        style="@style/buttonStyle"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

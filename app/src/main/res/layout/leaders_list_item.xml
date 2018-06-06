@@ -14,9 +14,12 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:textSize="26sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         android:text="Leader name"
-        android:id="@+id/tv_leaderName"/>
+        android:id="@+id/tv_leaderName"
+        android:layout_marginLeft="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginBottom="5sp"/>
 
     <TextView
         android:layout_alignParentLeft="true"
@@ -28,7 +31,10 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:textSize="26sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         android:text="Outstanding amount"
-        android:id="@+id/tv_amount"/>
+        android:id="@+id/tv_amount"
+        android:layout_marginRight="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginBottom="5sp"/>
 </RelativeLayout>

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background_colors">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="16sp"
         android:paddingRight="16sp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -17,7 +20,7 @@
             android:layout_marginTop="100sp"
             android:layout_marginBottom="50sp"
             android:textSize="40sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#ffffff"
             android:layout_gravity="center_horizontal"
             android:text="Chiro Kiewit"
             android:visibility="visible"
@@ -25,34 +28,32 @@
 
         <Button
             android:id="@+id/button_members"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="50sp"
             android:layout_marginTop="50sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/memberButtonMain" />
+            android:text="@string/memberButtonMain"
+            style="@style/buttonStyle"/>
         <Button
             android:id="@+id/button_leaders"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:layout_marginBottom="50sp"
             android:layout_marginTop="50sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/leaderButtonMain" />
+            android:text="@string/leaderButtonMain"
+            style="@style/buttonStyle"/>
         <Button
             android:id="@+id/button_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:layout_marginBottom="50sp"
             android:layout_marginTop="50sp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorAccent"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-            android:text="@string/search_button_text" />
+            android:text="@string/search_button_text"
+            style="@style/buttonStyle"/>
 
     </LinearLayout>
 </ScrollView>

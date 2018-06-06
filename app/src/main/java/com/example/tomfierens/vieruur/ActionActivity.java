@@ -120,4 +120,5 @@ public class ActionActivity extends AppCompatActivity {
         memberConsumptions = mCursor.getString(mCursor.getColumnIndex(MembersListContract.MembersListEntry.COLUMN_CONSUMPTIONS));
         setCircle();
     }
+
 }
